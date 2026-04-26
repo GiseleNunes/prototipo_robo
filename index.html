@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>🤖 Robô Fofoqueiro da Acessibilidade - Projeto Integrador</title>
+    <meta name="description"
+        content="Simulação interativa do Robô Fofoqueiro - Sensor de som, IA com gírias paranaenses, mapa acústico e alertas visuais">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ===================================================================
+         Titulo do documento: Robô Fofoqueiro Interativo - Sistema Embarcado Virtual
+         ===================================================================
+         Objetivo: Simular completamente o projeto "Robô Fofoqueiro" com 
+                   sensores virtuais, IA generativa (Markov + templates),
+                   reconhecimento de voz, visualização de dados em tempo real,
+                   mapa de calor acústico, sistema de conquistas e experiência
+                   multimídia imersiva.
+         Autor : Gisele Nunes
+         Data  : 2026
+         Versão: 3.0 - Premium
+         ===================================================================
+    -->
+
+    <!-- OVERLAY DE CARREGAMENTO -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loader-container">
+            <div class="robot-loader">
+                <div class="loader-head">🤖</div>
+                <div class="loader-text">Inicializando Robô Fofoqueiro...</div>
+                <div class="loader-bar">
+                    <div class="loader-progress" id="loaderProgress"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SISTEMA DE NOTIFICAÇÕES FLUTUANTES -->
+    <div class="notification-container" id="notificationContainer"></div>
+
+    <!-- HEADER PRINCIPAL -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="logo-robot">🤖</div>
+                <div class="logo-text">
+                    <h1>ROBÔ FOFOQUEIRO</h1>
+                    <p>da Acessibilidade - Versão Paraná</p>
+                </div>
+            </div>
+            <div class="badges-area">
+                <div class="badge bncc" title="Referências BNCC">📚 BNCC</div>
+                <div class="badge rcp" title="Referências RCP Paraná">📍 RCP-PR</div>
+                <div class="badge offline" title="Funciona sem internet">🔌 Offline</div>
+                <!-- NOVO BOTÃO ROBÔ FOFOQUEIRO COM LINK -->
+                <a href="https://giselenunes.github.io/projeto-integrador/pages/aula_08.html" target="_blank"
+                    rel="noopener noreferrer" class="robo-link-btn">
+                    🤖 Robô Fofoqueiro
+                </a>
+                <button class="theme-toggle" id="themeToggle" title="Modo escuro/claro">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTAINER PRINCIPAL DO ROBÔ -->
+    <main class="main-container">
+
+        <!-- SIDEBAR ESQUERDA (ESTATÍSTICAS E CONQUISTAS) -->
+        <aside class="sidebar-left">
+            <div class="stats-card">
+                <h3>📊 Estatísticas do Robô</h3>
+                <div class="stat-item">
+                    <span class="stat-label">Medições totais:</span>
+                    <span class="stat-value" id="totalMedicoes">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Pico máximo:</span>
+                    <span class="stat-value" id="picoMaximo">0 dB</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Alertas emitidos:</span>
+                    <span class="stat-value" id="totalAlertas">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Fofocas coletadas:</span>
+                    <span class="stat-value" id="totalFofocas">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Nível do robô:</span>
+                    <span class="stat-value" id="nivelRobo">🐣 Iniciante</span>
+                </div>
+            </div>
+
+            <div class="achievements-card">
+                <h3>🏆 Conquistas</h3>
+                <div class="achievements-list" id="achievementsList">
+                    <div class="achievement locked" data-id="first_measure">🎯 Primeira medição</div>
+                    <div class="achievement locked" data-id="alert_master">🚨 Mestre dos alertas (10x)</div>
+                    <div class="achievement locked" data-id="fofoqueiro">👂 Fofoqueiro nível 5</div>
+                    <div class="achievement locked" data-id="silence">🤫 Silêncio absoluto</div>
+                    <div class="achievement locked" data-id="inferno">🔥 Inferno acústico</div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ÁREA CENTRAL: O ROBÔ -->
+        <div class="robot-central">
+
+            <!-- CABEÇA DO ROBÔ COM EXPRESSÕES -->
+            <div class="robot-head">
+                <div class="antenna">
+                    <div class="antenna-ball"></div>
+                    <div class="antenna-line"></div>
+                </div>
+
+                <!-- OLHOS LED -->
+                <div class="eyes-container">
+                    <div class="eye left-eye" id="leftEye">
+                        <div class="eye-iris"></div>
+                        <div class="eye-glow"></div>
+                    </div>
+                    <div class="eye right-eye" id="rightEye">
+                        <div class="eye-iris"></div>
+                        <div class="eye-glow"></div>
+                    </div>
+                </div>
+
+                <!-- EXPRESSÃO FACIAL (emoji dinâmico) -->
+                <div class="facial-expression" id="facialExpression">😊</div>
+
+                <!-- BOCA COM ONDA SONORA -->
+                <div class="mouth-container">
+                    <div class="mouth-dot left-dot"></div>
+                    <div class="sound-wave" id="soundWave">
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                        <div class="wave-line"></div>
+                    </div>
+                    <div class="mouth-dot right-dot"></div>
+                </div>
+
+                <!-- STATUS DE FALA -->
+                <div class="speech-status" id="speechStatus">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Pronto para ouvir</span>
+                </div>
+            </div>
+
+            <!-- TÓRAX: TELA PRINCIPAL -->
+            <div class="robot-chest">
+                <div class="chest-header">
+                    <div class="screen-title" id="screenTitle">📈 Monitor de Decibéis</div>
+                    <div class="screen-controls">
+                        <button class="screen-btn active" data-view="graph">📊 Gráfico</button>
+                        <button class="screen-btn" data-view="heatmap">🗺️ Mapa Acústico</button>
+                        <button class="screen-btn" data-view="log">📋 Fofocas</button>
+                    </div>
+                </div>
+
+                <!-- VIEW: GRÁFICO EM TEMPO REAL -->
+                <div class="screen-view" id="graphView">
+                    <canvas id="realTimeGraph" width="600" height="250"></canvas>
+                    <div class="graph-legend">
+                        <span class="legend-green">🟢 Normal (&lt;75dB)</span>
+                        <span class="legend-red">🔴 Alerta (&gt;75dB)</span>
+                        <span class="legend-line">📈 Limite crítico</span>
+                    </div>
+                </div>
+
+                <!-- VIEW: MAPA DE CALOR ACÚSTICO -->
+                <div class="screen-view" id="heatmapView" style="display: none;">
+                    <div class="heatmap-container">
+                        <div class="school-map" id="schoolMap">
+                            <!-- Grade 4x4 gerada via JS -->
+                        </div>
+                        <div class="heatmap-legend">
+                            <span>🔇 0-40dB</span>
+                            <span>🗣️ 41-70dB</span>
+                            <span>📢 71-90dB</span>
+                            <span>💀 91-120dB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW: LOG DE FOFOcas -->
+                <div class="screen-view" id="logView" style="display: none;">
+                    <div class="log-container" id="logContainer">
+                        <div class="log-empty">📭 Nenhuma fofoca registrada ainda. Fale com o robô!</div>
+                    </div>
+                    <button class="clear-log-btn" id="clearLogBtn">🗑️ Limpar histórico</button>
+                </div>
+
+                <!-- SENSORES E INDICADORES -->
+                <div class="sensors-panel">
+                    <div class="sensor-item">
+                        <span class="sensor-icon">🎤</span>
+                        <span class="sensor-label">dB Atual:</span>
+                        <span class="sensor-value" id="currentDB">0.0</span>
+                    </div>
+                    <div class="sensor-item">
+                        <span class="sensor-icon">🚨</span>
+                        <span class="sensor-label">Status:</span>
+                        <span class="sensor-value" id="alertStatus">🟢 Normal</span>
+                    </div>
+                    <div class="sensor-item">
+                        <span class="sensor-icon">🔊</span>
+                        <span class="sensor-label">LED:</span>
+                        <span class="sensor-value" id="ledStatus">🟢 Verde</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIDEBAR DIREITA: IA E INTERAÇÃO -->
+        <aside class="sidebar-right">
+            <div class="ia-panel">
+                <div class="ia-header">
+                    <span>🧠 IA PARANAENSE</span>
+                    <span class="ia-badge">v2.0 - "Ó o trem"</span>
+                </div>
+                <div class="ia-message-container" id="iaMessageContainer">
+                    <div class="ia-message">
+                        <div class="ia-avatar">🤖</div>
+                        <div class="ia-bubble">
+                            <p>"Fala meu parça! Sou o Robô Fofoqueiro, especialista em medir barulho e espalhar
+                                acessibilidade com muito meme!"</p>
+                            <small>🔊 Clique nos botões abaixo para interagir</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="ia-typing" id="iaTyping" style="display: none;">
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span>Robô pensando...</span>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <h3>🎮 Controles</h3>
+                <div class="control-buttons">
+                    <button class="control-btn primary" id="measureBtn">
+                        <span>🎙️</span> Medir Som
+                    </button>
+                    <button class="control-btn voice" id="voiceBtn">
+                        <span>🗣️</span> Falar com Robô
+                    </button>
+                    <button class="control-btn meme" id="memeBtn">
+                        <span>😂</span> Gerar Meme
+                    </button>
+                    <button class="control-btn auto" id="autoModeBtn">
+                        <span>🤖</span> Modo Automático
+                    </button>
+                    <button class="control-btn reset" id="resetBtn">
+                        <span>🔄</span> Resetar
+                    </button>
+                </div>
+            </div>
+
+            <div class="dictionary-card">
+                <h3>📖 Dicionário Paranaense</h3>
+                <div class="dictionary-item">
+                    <span class="dialect-word">"Vixi"</span>
+                    <span class="dialect-meaning">Expressão de surpresa ou susto</span>
+                </div>
+                <div class="dictionary-item">
+                    <span class="dialect-word">"Piá"</span>
+                    <span class="dialect-meaning">Menino, jovem, garoto</span>
+                </div>
+                <div class="dictionary-item">
+                    <span class="dialect-word">"Guria"</span>
+                    <span class="dialect-meaning">Menina, moça</span>
+                </div>
+                <div class="dictionary-item">
+                    <span class="dialect-word">"Ó o trem"</span>
+                    <span class="dialect-meaning">Olha só, preste atenção</span>
+                </div>
+                <div class="dictionary-item">
+                    <span class="dialect-word">"Tchê"</span>
+                    <span class="dialect-meaning">Amigo, companheiro</span>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="bncc-info">
+                <strong>📌 Códigos BNCC:</strong> EM13MAT405, EM13CNT101, EM13LGG101, EM13LGG702, EM13CNT104, EM13MAT503
+            </div>
+            <div class="rcp-info">
+                <strong>📍 RCP - Paraná:</strong> Pensamento Computacional, Cidadania Digital, Trabalho Colaborativo
+            </div>
+            <div class="credits">
+                <span>Gisele Nunes - 2026</span>
+                <span>🤖 Projeto Integrador - Robô Fofoqueiro da Acessibilidade</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DE CONQUISTA (aparece quando ganha achievement) -->
+    <div class="achievement-modal" id="achievementModal">
+        <div class="achievement-modal-content">
+            <div class="achievement-icon">🏆</div>
+            <div class="achievement-text">
+                <h4>Conquista Desbloqueada!</h4>
+                <p id="achievementName"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ÁUDIO SIMULADO (feedback sonoro opcional) -->
+    <audio id="beepSound" preload="auto">
+        <source src="data:audio/wav;base64,U3RlYWx0aCBib3QgZGVtbw==" type="audio/wav">
+    </audio>
+
+</body>
+
+</html>
