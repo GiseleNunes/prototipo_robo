@@ -49,7 +49,7 @@ Porque o robô:
 Porque o projeto foi pensado para **incluir todo mundo**:
 
 Recurso	Para quem                                 
-  
+	
 🖥️ Funciona no Chromebook da escola	Quem não tem PC gamer                      
 🔌 100% offline (modo fallback)	Escolas sem internet                       
 🎤 Reconhecimento de voz	Quem tem dificuldade de digitar            
@@ -81,7 +81,7 @@ Pronto! O robô vai aparecer na tela e você pode começar a interagir.
 ### Componente: Linguagens
 
  BNCC (Ensino Médio)                               	RCP - Paraná                        
-  
+	
 EM13LGG101 - Compreender processos de produção de sentido 	Língua Portuguesa - Oralidade
 EM13LGG304 - Utilizar recursos linguísticos para humor e ironia	Produção de texto multimodal
 EM13LGG702 - Utilizar diferentes linguagens	
@@ -91,7 +91,7 @@ EM13LP16 - Produzir textos orais
 ### Componente: Matemática
 
 BNCC (Ensino Médio)	RCP Paraná
-  
+	
 EM13MAT405 - Conceitos de Programação	Pensamento Computacional           
 EM13MAT503 - Interpretar dados em gráficos	Estatística e Tratamento da Informação
 
@@ -99,7 +99,7 @@ EM13MAT503 - Interpretar dados em gráficos	Estatística e Tratamento da Informa
 ### Componente: Ciências da Natureza
 
 BNCC (Ensino Médio)                      	RCP Paraná
-  
+	
 EM13CNT101 	Física Ondulatória
 EM13CNT104 - Avaliar limites de tecnologias de captura 	Tecnologia e Sociedade
 EM13CNT206 - Discutir aplicações de sensores	
@@ -108,7 +108,7 @@ EM13CNT303 - Interpretar tecnologias de visão computacional
 ### Competências Gerais da BNCC
 
 Competência	Descrição                                      
-  
+	
 CG1	Valorizar conhecimentos historicamente construídos
 CG2	Exercitar curiosidade intelectual
 CG4	Utilizar diferentes linguagens
@@ -122,10 +122,10 @@ CG10	Agir com autonomia
 
 ## 🛠️ TECNOLOGIAS USADAS
 
-![TECNOLOGIAS USADAS](assets/images/diagrama_README.png)
+!(assets/images/diagrama_README.png)
 
 Tecnologia	Para que serve
-  
+	
 HTML5	Estrutura da página e elementos do robô
 CSS3	Tudo que é bonito: animações, tema escuro/claro, responsividade
 JavaScript ES6+	Toda a inteligência do robô
@@ -170,30 +170,30 @@ files.download('index.html')
 🎮 COMO USAR O ROBÔ
 Interface Principal
 text
-┌─────────────────────────────────────────────┐
-│  🤖 ROBÔ FOFOQUEIRO da Acessibilidade - Versão Paraná       	        │
-├─────────────────────────────────────────────┤
-│  📊 ESTATÍSTICAS                         │        🤖 CABEÇA DO ROBÔ        │
-│  • Medições: 42                                 │       👁️      👁️                   	        │
-│  • Pico: 98 dB            		      │        (LEDs que piscam)                │
-│  • Alertas: 7             		      │				        │
-│  • Fofocas: 15                                    │       😊 (expressão)		        │
-│  • Nível: Especialista    		       │       ~~~~~~ (boca dançante)       │
-├───────────────────────┼─────────────────────┤
-│  🏆 CONQUISTAS             	       │         📊 TELA DO ROBÔ           │
-│  ✅ Primeira medição       	       │    [GRÁFICO] [MAPA] [LOG]       │
-│  ⏳ Mestre dos alertas     	       │                                                     │
-│  🔒 Fofoqueiro nível 5     	       │    ┌───────────────┐      │
-├───────────────────────┤     │ ████████ 85dB                │
-│  🧠 IA PARANAENSE          	       │     │ ██████ 70dB             │      │
-│  ┌───────────────────┐    │     │ ████ 45dB                  │      │
-│   │ 🤖 "Fala meu parça!"            │    │     └───────────────┘      │
-│  └─────────────── ────┘   │                                                      │
-├───────────────────────┼─────────────────────┤
-│  🎮 CONTROLES                             │   🎤 dB: 45.2 🟢 NORMAL         │
-│  [MEDIR] [FALAR] [MEME]               │                                                      │
-│  [AUTO] [RESET]                              │                                                      │
-└───────────────────────┴─────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│  🤖 ROBÔ FOFOQUEIRO da Acessibilidade - Versão Paraná       	           │
+├─────────────────────────────────────────────────────────┤
+│  📊 ESTATÍSTICAS        │        🤖 CABEÇA DO ROBÔ     │
+│  • Medições: 42         │       👁️      👁️             │
+│  • Pico: 98 dB          │        (LEDs que piscam)      │
+│  • Alertas: 7           │				                  │
+│  • Fofocas: 15          │       😊 (expressão)		 │
+│  • Nível: Especialista  │       ~~~~~~ (boca dançante)  │
+├─────────────────────────┼───────────────────────────────┤
+│  🏆 CONQUISTAS          │         📊 TELA DO ROBÔ      │
+│  ✅ Primeira medição    │    [GRÁFICO] [MAPA] [LOG]     │
+│  ⏳ Mestre dos alertas  │                               │  
+│  🔒 Fofoqueiro nível 5  │    ┌────────────────┐         │
+├─────────────────────────┤     │ ████████ 85dB │          │
+│  🧠 IA PARANAENSE       │    │ ██████ 70dB    │         │      
+│  ┌─────────────────────┐ │    │ ████ 45dB     │          │
+│  │🤖 "Fala meu parça!"│ │    └────────────────┘         │
+│  └─────────────── ────┘  │                               │
+├──────────────────────────┼───────────────────────────────┤
+│  🎮 CONTROLES           │   🎤 dB: 45.2 🟢 NORMAL      │
+│  [MEDIR] [FALAR] [MEME]  │                               │          │                          │                               │
+│  [AUTO] [RESET]          │                               │ │                          │                               │
+└──────────────────────────┴───────────────────────────────┘
 Botões e suas funções
 Botão	O que faz	Quando usar
 🎙️ Medir Som	Simula uma medição de decibéis	Quando quiser testar o sensor
