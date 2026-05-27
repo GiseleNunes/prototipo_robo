@@ -171,7 +171,7 @@ files.download('index.html')
 Interface Principal
 text
 ┌─────────────────────────────────────────────────────────┐
-│  🤖 ROBÔ FOFOQUEIRO da Acessibilidade - Versão Paraná       	           │
+│  🤖 ROBÔ FOFOQUEIRO da Acessibilidade - Versão Paraná   │
 ├─────────────────────────────────────────────────────────┤
 │  📊 ESTATÍSTICAS        │        🤖 CABEÇA DO ROBÔ     │
 │  • Medições: 42         │       👁️      👁️             │
@@ -191,8 +191,8 @@ text
 │  └─────────────── ────┘  │                               │
 ├──────────────────────────┼───────────────────────────────┤
 │  🎮 CONTROLES           │   🎤 dB: 45.2 🟢 NORMAL      │
-│  [MEDIR] [FALAR] [MEME]  │                               │          │                          │                               │
-│  [AUTO] [RESET]          │                               │ │                          │                               │
+│  [MEDIR] [FALAR] [MEME]  │                               │
+│  [AUTO] [RESET]          │                               │
 └──────────────────────────┴───────────────────────────────┘
 Botões e suas funções
 Botão	O que faz	Quando usar
@@ -494,4 +494,3 @@ javascript
 console.log("🤖 Robô Fofoqueiro README carregado com sucesso!");
 console.log("📚 Bons estudos, piá! Ó o trem!");
 ________________________________________
-
